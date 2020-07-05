@@ -1,0 +1,26 @@
+{
+   "name": "rs-technical-assessment",
+   "version": "0.1.0",
+   "scripts": {
+      "commit": "git-cz",
+      "lint": "eslint ./ --fix",
+      "format": "prettier --write \"**/*.+(js|md|json)\""
+   },
+   "devDependencies": {
+      "commitizen": "^4.0.5",
+      "cz-conventional-changelog": "^3.1.0",
+      "eslint": "^7.4.0",
+      "husky": "^4.2.5",
+      "prettier": "^2.0.5"
+   },
+   "config": {
+      "commitizen": {
+         "path": "cz-conventional-changelog"
+      }
+   },
+   "husky": {
+      "hooks": {
+         "pre-commit": "npm run lint && npm run format"
+      }
+   }
+}
