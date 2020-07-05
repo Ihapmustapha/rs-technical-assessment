@@ -1,33 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign up | Robusta</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Sign up | Robusta</title>
+      <!-- Bootstrap -->
+      <link
+         rel="stylesheet"
+         href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+         crossorigin="anonymous"
+      />
+      <!-- styles -->
+      <link rel="stylesheet" href="style.css" />
+   </head>
+   <body>
+      <div class="container my-5">
+         <div class="col-md-4 offset-md-4 pt-5 card" style="width: 24rem;">
+            <div class="card-body">
+               <h5 class="card-title">Sign Up</h5>
+               <form
+                  action="https://private-b2e6827-robustatask.apiary-mock.com/auth/register"
+                  method="post"
+               >
+                  <!-- full name -->
+                  <div class="form-group">
+                     <input
+                        type="text"
+                        class="form-control"
+                        id="fullName"
+                        placeholder="Full Name"
+                        aria-placeholder="Full Name"
+                     />
+                  </div>
+                  <!-- email -->
+                  <div class="form-group">
+                     <input
+                        type="text"
+                        id="email"
+                        class="form-control"
+                        placeholder="Email"
+                        aria-placeholder="Email"
+                     />
+                  </div>
+                  <!-- user name -->
+                  <div class="form-group">
+                     <input
+                        type="text"
+                        id="username"
+                        class="form-control"
+                        placeholder="Username"
+                        aria-placeholder="Username"
+                        aria-describedby="usernameHelp"
+                     />
+                     <small id="usernameHelp" class="form-text text-muted">
+                        Pick a uniuqe username
+                     </small>
+                  </div>
+                  <!-- password -->
+                  <div class="form-group">
+                     <input
+                        type="password"
+                        id="password"
+                        class="form-control"
+                        aria-describedby="passwordHelp"
+                        placeholder="Password"
+                        aria-placeholder="Password"
+                     />
+                     <small id="passwordHelp" class="form-text text-muted">
+                        Pick a password that contains letters, numbers and
+                        special case letters
+                     </small>
+                  </div>
+                  <!-- submit button -->
+                  <button type="submit" class="btn btn-primary btn-block">
+                     Sign Up
+                  </button>
+                  <button type="submit" class="btn btn-light btn-block">
+                     Cancel
+                  </button>
+               </form>
+            </div>
+         </div>
+      </div>
 
-    <form action="https://private-b2e6827-robustatask.apiary-mock.com/auth/register" method="post">
-      <div class="form-group">
-        <span>Full Name</span>
-        <input type="text" id="username" />
-      </div>
-      <div class="form-group">
-        <span>Email</span>
-        <input type="text" id="username" />
-      </div>
-      <div class="form-group">
-        <span>Username</span>
-        <input type="text" id="username" />
-      </div>
-      <div class="form-group">
-        <span>Password</span>
-        <input type="password" id="password" />
-      </div>
-      <input type="submit" value="submit" />
-    </form>
-
-  <script src="script.js"></script>
-</body>
+      <script src="script.js"></script>
+   </body>
 </html>
