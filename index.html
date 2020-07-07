@@ -20,7 +20,7 @@
             <div class="col-xl-4 pt-5 card" style="width: 24rem;">
                <div class="card-body">
                   <h5 class="card-title">Sign Up</h5>
-                  <form id="signUpForm">
+                  <form id="signUpForm" novalidate>
                      <!-- full name -->
                      <div class="form-group">
                         <input
@@ -30,18 +30,27 @@
                            id="fullName"
                            placeholder="Full Name"
                            aria-placeholder="Full Name"
+                           required
+                           aria-required="true"
                         />
+                        <p
+                           id="fullNameErrorMessage"
+                           class="invalid-feedback"
+                        ></p>
                      </div>
                      <!-- email -->
                      <div class="form-group">
                         <input
-                           type="text"
+                           type="email"
                            name="email"
                            id="email"
                            class="form-control"
                            placeholder="Email"
                            aria-placeholder="Email"
+                           required
+                           aria-required="true"
                         />
+                        <p id="emailErrorMessage" class="invalid-feedback"></p>
                      </div>
                      <!-- user name -->
                      <div class="form-group">
@@ -53,7 +62,13 @@
                            placeholder="Username"
                            aria-placeholder="Username"
                            aria-describedby="usernameHelp"
+                           required
+                           aria-required="true"
                         />
+                        <p
+                           id="usernameErrorMessage"
+                           class="invalid-feedback"
+                        ></p>
                         <small id="usernameHelp" class="form-text text-muted">
                            Pick a uniuqe username
                         </small>
@@ -68,7 +83,13 @@
                            aria-describedby="passwordHelp"
                            placeholder="Password"
                            aria-placeholder="Password"
+                           required
+                           aria-required="true"
                         />
+                        <p
+                           id="passwordErrorMessage"
+                           class="invalid-feedback"
+                        ></p>
                         <small id="passwordHelp" class="form-text text-muted">
                            Pick a password that contains letters, numbers and
                            special case letters
@@ -86,6 +107,6 @@
             </div>
          </div>
       </div>
-      <script src="script.js"></script>
+      <script type="module" src="script.js"></script>
    </body>
 </html>
