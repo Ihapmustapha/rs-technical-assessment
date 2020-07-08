@@ -1,3 +1,4 @@
+// input error
 export function showErrorForInput(inputProps) {
    const { name, value } = inputProps;
 
@@ -24,4 +25,23 @@ export function showErrorForInput(inputProps) {
             "A minimum 8 characters password contains a combination of uppercase and lowercase letter, special character and number are required.";
       }
    }
+}
+
+// error-success messages (alerts)
+export function showHideSuccess(message, state) {
+   const successFeedbackMessage = document.getElementById(
+      "successFeedbackMessage"
+   );
+   if (message) successFeedbackMessage.innerHTML = message;
+
+   if (state === "show") successFeedbackMessage.classList.remove("d-none");
+   else if (state === "hide") successFeedbackMessage.classList.add("d-none");
+}
+
+export function showHideError(message, state) {
+   const errorFeedbackMessage = document.getElementById("errorFeedbackMessage");
+   if (message) errorFeedbackMessage.innerHTML = message;
+
+   if (state === "show") errorFeedbackMessage.classList.remove("d-none");
+   else if (state === "hide") errorFeedbackMessage.classList.add("d-none");
 }

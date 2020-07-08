@@ -1,7 +1,11 @@
 "use strict";
 
 import { getInvalidFormInputs } from "./validation.js";
-import { showErrorForInput } from "./ui-feedback.js";
+import {
+   showErrorForInput,
+   showHideSuccess,
+   showHideError,
+} from "./ui-feedback.js";
 import { applyMediaQueries } from "./media-queries.js";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -42,10 +46,14 @@ document.addEventListener("DOMContentLoaded", function () {
          body: signUpFormData,
       })
          .then(function (response) {
-            console.log(response);
+            showHideSuccess(response.message, "show");
+
+            setTimeout(() => {
+               showHideSuccess(null, "hide");
+            }, 5000);
          })
-         .catch(function (error) {
-            console.log(error);
+         .catch(function () {
+            showHideError("Faild to create account, try again!", "hide");
          });
    });
 });

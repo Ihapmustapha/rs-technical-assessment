@@ -15,12 +15,9 @@
       <link rel="stylesheet" href="style.css" />
    </head>
    <body>
-      <main class="container h-100">
-         <div class="row h-100 justify-content-center align-items-center">
-            <section
-               id="containerCard"
-               class="col-xl-4 pt-5 card container-card"
-            >
+      <div class="container h-100">
+         <div class="row justify-content-center align-items-center">
+            <div id="containerCard" class="col-xl-4 pt-5 card container-card">
                <div class="card-body">
                   <h5 class="card-title">Sign Up</h5>
                   <form id="signUpForm" novalidate>
@@ -141,9 +138,23 @@
                      Cancel
                   </button>
                </div>
-            </section>
+            </div>
          </div>
-      </main>
+         <div class="row justify-content-center align-items-center">
+            <div
+               class="alert alert-success col-6 d-none"
+               role="alert"
+               id="successFeedbackMessage"
+               aria-live="off"
+            ></div>
+            <div
+               class="alert alert-danger col-6 d-none"
+               role="alert"
+               id="errorFeedbackMessage"
+               aria-live="off"
+            ></div>
+         </div>
+      </div>
       <script type="module" src="script.js"></script>
    </body>
 </html>
