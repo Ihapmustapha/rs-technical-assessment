@@ -2,14 +2,18 @@
 
 import { getInvalidFormInputs } from "./validation.js";
 import { showErrorForInput } from "./ui-feedback.js";
+import { applyMediaQueries } from "./media-queries.js";
 
 document.addEventListener("DOMContentLoaded", function () {
    const API_URL = "https://private-b2e6827-robustatask.apiary-mock.com";
    const API_PATH_SIGNUP = "/auth/register";
    const API_PATH_SIGNIN = "/auth/login";
 
-   const signUpForm = document.getElementById("signUpForm");
+   // media queries
+   applyMediaQueries();
 
+   // Sign Up
+   const signUpForm = document.getElementById("signUpForm");
    signUpForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
