@@ -2,3 +2,10 @@ body,
 html {
    height: 100%;
 }
+
+.cancel-button {
+   margin-top: 7px;
+}
+.container-card {
+   width: 24rem;
+}
