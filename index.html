@@ -21,80 +21,114 @@
                <div class="card-body">
                   <h5 class="card-title">Sign Up</h5>
                   <form id="signUpForm" novalidate>
-                     <!-- full name -->
-                     <div class="form-group">
-                        <input
-                           type="text"
-                           class="form-control"
-                           name="fullName"
-                           id="fullName"
-                           placeholder="Full Name"
-                           aria-placeholder="Full Name"
-                           required
-                           aria-required="true"
-                        />
-                        <p
-                           id="fullNameErrorMessage"
-                           class="invalid-feedback"
-                        ></p>
-                     </div>
-                     <!-- email -->
-                     <div class="form-group">
-                        <input
-                           type="email"
-                           name="email"
-                           id="email"
-                           class="form-control"
-                           placeholder="Email"
-                           aria-placeholder="Email"
-                           required
-                           aria-required="true"
-                        />
-                        <p id="emailErrorMessage" class="invalid-feedback"></p>
-                     </div>
-                     <!-- user name -->
-                     <div class="form-group">
-                        <input
-                           type="text"
-                           name="username"
-                           id="username"
-                           class="form-control"
-                           placeholder="Username"
-                           aria-placeholder="Username"
-                           aria-describedby="usernameHelp"
-                           required
-                           aria-required="true"
-                        />
-                        <p
-                           id="usernameErrorMessage"
-                           class="invalid-feedback"
-                        ></p>
-                        <small id="usernameHelp" class="form-text text-muted">
-                           Pick a uniuqe username
-                        </small>
-                     </div>
-                     <!-- password -->
-                     <div class="form-group">
-                        <input
-                           type="password"
-                           name="password"
-                           id="password"
-                           class="form-control"
-                           aria-describedby="passwordHelp"
-                           placeholder="Password"
-                           aria-placeholder="Password"
-                           required
-                           aria-required="true"
-                        />
-                        <p
-                           id="passwordErrorMessage"
-                           class="invalid-feedback"
-                        ></p>
-                        <small id="passwordHelp" class="form-text text-muted">
-                           Pick a password that contains letters, numbers and
-                           special case letters
-                        </small>
-                     </div>
+                     <fieldset>
+                        <legend class="d-none">
+                           Required Information for SignUp
+                        </legend>
+                        <!-- full name -->
+                        <div class="form-group">
+                           <label class="d-none" for="fullName">
+                              Full Name <span>(required)</span>
+                           </label>
+                           <input
+                              type="text"
+                              class="form-control"
+                              name="fullName"
+                              id="fullName"
+                              placeholder="Full Name"
+                              aria-placeholder="Full Name"
+                              required
+                              aria-required="true"
+                              aria-errormessage="fullNameErrorMessage"
+                           />
+                           <p
+                              id="fullNameErrorMessage"
+                              class="invalid-feedback"
+                              aria-live="off"
+                           ></p>
+                        </div>
+                        <!-- email -->
+                        <div class="form-group">
+                           <label class="d-none" for="email">
+                              Email <span>(required)</span>
+                           </label>
+                           <input
+                              type="email"
+                              name="email"
+                              id="email"
+                              class="form-control"
+                              placeholder="Email"
+                              aria-placeholder="Email"
+                              required
+                              aria-required="true"
+                              aria-errormessage="emailErrorMessage"
+                           />
+                           <p
+                              id="emailErrorMessage"
+                              class="invalid-feedback"
+                              aria-live="off"
+                           ></p>
+                        </div>
+                        <!-- user name -->
+                        <div class="form-group">
+                           <label class="d-none" for="username">
+                              Username <span>(required)</span>
+                           </label>
+                           <input
+                              type="text"
+                              name="username"
+                              id="username"
+                              class="form-control"
+                              placeholder="Username"
+                              aria-placeholder="Username"
+                              aria-describedby="usernameHelp"
+                              required
+                              aria-required="true"
+                              aria-errormessage="usernameErrorMessage"
+                           />
+                           <p
+                              id="usernameErrorMessage"
+                              class="invalid-feedback"
+                              aria-live="off"
+                           ></p>
+                           <small
+                              id="usernameHelp"
+                              class="form-text text-muted"
+                           >
+                              Pick a uniuqe username
+                           </small>
+                        </div>
+                        <!-- password -->
+                        <div class="form-group">
+                           <label class="d-none" for="password">
+                              Password <span>(required)</span>
+                           </label>
+                           <input
+                              type="password"
+                              name="password"
+                              id="password"
+                              class="form-control"
+                              aria-describedby="passwordHelp"
+                              placeholder="Password"
+                              aria-placeholder="Password"
+                              required
+                              aria-required="true"
+                              aria-errormessage="passwordErrorMessage"
+                           />
+                           <p
+                              id="passwordErrorMessage"
+                              class="invalid-feedback"
+                              aria-live="off"
+                           ></p>
+                           <small
+                              id="passwordHelp"
+                              class="form-text text-muted"
+                           >
+                              Pick a password that contains letters, numbers and
+                              special case letters
+                           </small>
+                        </div>
+                     </fieldset>
                      <!-- submit button -->
                      <button type="submit" class="btn btn-primary btn-block">
                         Sign Up
