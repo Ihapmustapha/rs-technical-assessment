@@ -11,6 +11,8 @@ export function showErrorForInput(inputProps) {
 
    if (!value) {
       selectedInputErrorMessage.innerHTML = "this field is required";
+      showHideHelpersFor("usernameHelp", "hide");
+      showHideHelpersFor("passwordHelp", "hide");
    } else {
       if (name === "fullName") {
          selectedInputErrorMessage.innerHTML =
@@ -20,10 +22,21 @@ export function showErrorForInput(inputProps) {
       } else if (name === "username") {
          selectedInputErrorMessage.innerHTML =
             "username must not exceed 100 characters in length";
+         showHideHelpersFor("usernameHelp", "hide");
       } else if (name === "password") {
          selectedInputErrorMessage.innerHTML =
             "A minimum 8 characters password contains a combination of uppercase and lowercase letter, special character and number are required.";
+         showHideHelpersFor("passwordHelp", "hide");
       }
+   }
+}
+
+export function showHideHelpersFor(id, state = "hide") {
+   if (!id) return;
+   if (state === "show") {
+      document.getElementById(id).classList.remove("d-none");
+   } else {
+      document.getElementById(id).classList.add("d-none");
    }
 }
 

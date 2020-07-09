@@ -5,6 +5,7 @@ import {
    showErrorForInput,
    showHideSuccess,
    showHideError,
+   showHideHelpersFor,
 } from "./ui-feedback.js";
 import { applyMediaQueries } from "./media-queries.js";
 
@@ -36,6 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
          invalidDOMElements.forEach(function (element) {
             element.addEventListener("input", function () {
                this.classList.remove("is-invalid");
+               if (this.id === "password")
+                  showHideHelpersFor("passwordHelp", "show");
+               if (this.id === "username")
+                  showHideHelpersFor("usernameHelp", "show");
             });
          });
          return;
