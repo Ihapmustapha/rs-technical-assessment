@@ -1,5 +1,12 @@
 # Robusta Technical Frontend Task
 
+## Scripts
+
+-  `npm start` Runs the app in the development mode. Open http://localhost:5000 to view it in the browser.
+-  `npm run commit` Runs **commitizen** to provide descriptive commit messages through **CLI**.
+-  `npm run lint` Runs **ESLint** to apply linting rules on project directory files.
+-  `npm run format` Runs **Prettier** to format directory files.
+
 ## Overview
 
 Using this markup as a base, please fix the errors and improve the usability and polish of the sign-up form.
