@@ -1,5 +1,7 @@
 # Robusta Technical Frontend Task
 
+App's been implemented using zero dependencies, however multiple dev dependencies are used. The dev dependencies provide handy development environnement that supports meaningfull commits, linted and well formatted code beside providing simple development server to run the app localy. App's user interface based on Bootstrap v4.5.0.
+
 ## Scripts
 
 -  `npm start` Runs the app in the development mode. Open http://localhost:5000 to view it in the browser.
