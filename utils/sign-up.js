@@ -5,6 +5,7 @@ import {
    showHideError,
    showHideHelpersFor,
    setButtonLoading,
+   clearFieldsOf,
 } from "./ui-feedback.js";
 
 export default function () {
@@ -86,6 +87,7 @@ export default function () {
          .then(function () {
             setButtonLoading("signUpButton", "stop", "Sign Up");
             showHideSuccess("User signed up successfully", "show");
+            clearFieldsOf([...signUpFormInputs.map((input) => input.id)]);
 
             setTimeout(() => {
                showHideSuccess(null, "hide");

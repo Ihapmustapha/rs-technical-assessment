@@ -4,6 +4,7 @@ import {
    showHideSuccess,
    showHideError,
    setButtonLoading,
+   clearFieldsOf,
 } from "./ui-feedback.js";
 
 export default function () {
@@ -61,6 +62,7 @@ export default function () {
          .then(function () {
             setButtonLoading("signInButton", "stop", "Sign In");
             showHideSuccess("User signed in successfully", "show");
+            clearFieldsOf([...signInFormInputs.map((input) => input.id)]);
 
             setTimeout(() => {
                showHideSuccess(null, "hide");
