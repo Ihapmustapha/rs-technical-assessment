@@ -6,6 +6,11 @@
 -  `npm run commit` Runs **commitizen** to provide descriptive commit messages through **CLI**.
 -  `npm run lint` Runs **ESLint** to apply linting rules on project directory files.
 -  `npm run format` Runs **Prettier** to format directory files.
+- `npm i` to install app's dev dependencies. 
+
+## Live Preview
+
+- Live version of the app available [here](https://ihapmustapha.github.io/rs-technical-assessment/).
 
 ## Overview
 
