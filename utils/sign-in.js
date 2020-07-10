@@ -3,6 +3,7 @@ import {
    showErrorForInput,
    showHideSuccess,
    showHideError,
+   setButtonLoading,
 } from "./ui-feedback.js";
 
 export default function () {
@@ -52,19 +53,21 @@ export default function () {
          return;
       }
 
+      setButtonLoading("signInButton", "start");
       fetch(`${API_URL}${API_PATH_SIGNIN}`, {
          method: "POST",
          body: signInFormData,
       })
-         .then(function (response) {
-            showHideSuccess(response.message, "show");
+         .then(function () {
+            setButtonLoading("signInButton", "stop", "Sign In");
+            showHideSuccess("User signed in successfully", "show");
 
             setTimeout(() => {
                showHideSuccess(null, "hide");
             }, 5000);
          })
          .catch(function () {
-            showHideError("Faild to login, try again!", "show");
+            showHideError("Faild to sign in, try again!", "show");
          });
    });
 }

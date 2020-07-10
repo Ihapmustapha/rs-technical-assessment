@@ -4,6 +4,7 @@ import {
    showHideSuccess,
    showHideError,
    showHideHelpersFor,
+   setButtonLoading,
 } from "./ui-feedback.js";
 
 export default function () {
@@ -77,12 +78,14 @@ export default function () {
          return;
       }
 
+      setButtonLoading("signUpButton", "start");
       fetch(`${API_URL}${API_PATH_SIGNUP}`, {
          method: "POST",
          body: signUpFormData,
       })
-         .then(function (response) {
-            showHideSuccess(response.message, "show");
+         .then(function () {
+            setButtonLoading("signUpButton", "stop", "Sign Up");
+            showHideSuccess("User signed up successfully", "show");
 
             setTimeout(() => {
                showHideSuccess(null, "hide");
