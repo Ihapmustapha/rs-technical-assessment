@@ -1,34 +1,18 @@
 // input error
 export function showErrorForInput(inputProps) {
-   const { name, value } = inputProps;
+   const { id, errorMessageId, error } = inputProps;
 
-   const selectedInput = document.querySelector(`[name=${name}]`);
+   const selectedInput = document.getElementById(id);
    selectedInput.classList.add("is-invalid");
 
    const selectedInputErrorMessage = document.getElementById(
-      `${name}ErrorMessage`
+      `${errorMessageId}`
    );
 
-   if (!value) {
-      selectedInputErrorMessage.innerHTML = "this field is required";
-      showHideHelpersFor("usernameHelp", "hide");
-      showHideHelpersFor("passwordHelp", "hide");
-   } else {
-      if (name === "fullName") {
-         selectedInputErrorMessage.innerHTML =
-            "full name must not contain numbers nor exceed 100 character in length";
-      } else if (name === "email") {
-         selectedInputErrorMessage.innerHTML = "email is invalid";
-      } else if (name === "username") {
-         selectedInputErrorMessage.innerHTML =
-            "username must not exceed 100 characters in length";
-         showHideHelpersFor("usernameHelp", "hide");
-      } else if (name === "password") {
-         selectedInputErrorMessage.innerHTML =
-            "A minimum 8 characters password contains a combination of uppercase and lowercase letter, special character and number are required.";
-         showHideHelpersFor("passwordHelp", "hide");
-      }
-   }
+   selectedInputErrorMessage.innerHTML = error;
+
+   if (id === "signUpUsername") showHideHelpersFor("usernameHelp", "hide");
+   if (id === "signUpPassword") showHideHelpersFor("passwordHelp", "hide");
 }
 
 export function showHideHelpersFor(id, state = "hide") {
