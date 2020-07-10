@@ -62,3 +62,9 @@ export function setButtonLoading(buttonId, state, stopInnerHTML) {
       button.removeAttribute("disabled");
    }
 }
+
+export function clearFieldsOf(fieldsIds) {
+   fieldsIds.forEach(
+      (fieldId) => (document.getElementById(fieldId).value = "")
+   );
+}
