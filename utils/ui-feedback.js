@@ -43,6 +43,7 @@ export function showHideError(message, state) {
    else if (state === "hide") errorFeedbackMessage.classList.add("d-none");
 }
 
+// changing button inner html when (stop) loading
 export function setButtonLoading(buttonId, state, stopInnerHTML) {
    // selected button
    const button = document.getElementById(buttonId);
