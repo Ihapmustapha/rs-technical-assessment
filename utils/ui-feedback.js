@@ -42,3 +42,23 @@ export function showHideError(message, state) {
    if (state === "show") errorFeedbackMessage.classList.remove("d-none");
    else if (state === "hide") errorFeedbackMessage.classList.add("d-none");
 }
+
+export function setButtonLoading(buttonId, state, stopInnerHTML) {
+   // selected button
+   const button = document.getElementById(buttonId);
+
+   if (state === "start") {
+      // loading elm
+      const loadingElm = document.createElement("span");
+      loadingElm.setAttribute("class", "spinner-border spinner-border-sm");
+      loadingElm.setAttribute("role", "status");
+      loadingElm.setAttribute("aria-hidden", "true");
+
+      button.innerHTML = ``;
+      button.appendChild(loadingElm);
+      button.setAttribute("disabled", true);
+   } else if (state === "stop" && stopInnerHTML) {
+      button.innerHTML = stopInnerHTML;
+      button.removeAttribute("disabled");
+   }
+}
