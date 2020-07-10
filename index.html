@@ -20,10 +20,66 @@
             <div id="containerCard" class="col-xl-4 pt-5 card container-card">
                <div class="card-body">
                   <h5 class="card-title">Sign Up</h5>
+                  <form id="signInForm" novalidate class="d-none">
+                     <fieldset>
+                        <legend class="d-none">
+                           Required Information to Sign In
+                        </legend>
+                        <!-- email -->
+                        <div class="form-group">
+                           <label class="d-none" for="email">
+                              Email <span>(required)</span>
+                           </label>
+                           <input
+                              type="email"
+                              name="email"
+                              id="signInEmail"
+                              class="form-control"
+                              placeholder="Email"
+                              aria-placeholder="Email"
+                              required
+                              aria-required="true"
+                              aria-errormessage="signInEmailErrorMessage"
+                           />
+                           <p
+                              id="signInEmailErrorMessage"
+                              class="invalid-feedback"
+                              aria-live="off"
+                           ></p>
+                        </div>
+                        <!-- password -->
+                        <div class="form-group">
+                           <label class="d-none" for="password">
+                              Password <span>(required)</span>
+                           </label>
+                           <input
+                              type="password"
+                              name="password"
+                              id="signInPassword"
+                              class="form-control"
+                              aria-describedby="passwordHelp"
+                              placeholder="Password"
+                              aria-placeholder="Password"
+                              required
+                              aria-required="true"
+                              aria-errormessage="signInPasswordErrorMessage"
+                           />
+                           <p
+                              id="signInPasswordErrorMessage"
+                              class="invalid-feedback"
+                              aria-live="off"
+                           ></p>
+                        </div>
+                     </fieldset>
+                     <!-- submit button -->
+                     <button type="submit" class="btn btn-primary btn-block">
+                        Sign In
+                     </button>
+                  </form>
                   <form id="signUpForm" novalidate>
                      <fieldset>
                         <legend class="d-none">
-                           Required Information for SignUp
+                           Required Information to Sign Up
                         </legend>
                         <!-- full name -->
                         <div class="form-group">
@@ -34,15 +90,15 @@
                               type="text"
                               class="form-control"
                               name="fullName"
-                              id="fullName"
+                              id="signUpFullName"
                               placeholder="Full Name"
                               aria-placeholder="Full Name"
                               required
                               aria-required="true"
-                              aria-errormessage="fullNameErrorMessage"
+                              aria-errormessage="signUpFullNameErrorMessage"
                            />
                            <p
-                              id="fullNameErrorMessage"
+                              id="signUpFullNameErrorMessage"
                               class="invalid-feedback"
                               aria-live="off"
                            ></p>
@@ -55,16 +111,16 @@
                            <input
                               type="email"
                               name="email"
-                              id="email"
+                              id="signUpEmail"
                               class="form-control"
                               placeholder="Email"
                               aria-placeholder="Email"
                               required
                               aria-required="true"
-                              aria-errormessage="emailErrorMessage"
+                              aria-errormessage="signUpEmailErrorMessage"
                            />
                            <p
-                              id="emailErrorMessage"
+                              id="signUpEmailErrorMessage"
                               class="invalid-feedback"
                               aria-live="off"
                            ></p>
@@ -77,17 +133,17 @@
                            <input
                               type="text"
                               name="username"
-                              id="username"
+                              id="signUpUsername"
                               class="form-control"
                               placeholder="Username"
                               aria-placeholder="Username"
                               aria-describedby="usernameHelp"
                               required
                               aria-required="true"
-                              aria-errormessage="usernameErrorMessage"
+                              aria-errormessage="signUpUsernameErrorMessage"
                            />
                            <p
-                              id="usernameErrorMessage"
+                              id="signUpUsernameErrorMessage"
                               class="invalid-feedback"
                               aria-live="off"
                            ></p>
@@ -106,17 +162,17 @@
                            <input
                               type="password"
                               name="password"
-                              id="password"
+                              id="signUpPassword"
                               class="form-control"
                               aria-describedby="passwordHelp"
                               placeholder="Password"
                               aria-placeholder="Password"
                               required
                               aria-required="true"
-                              aria-errormessage="passwordErrorMessage"
+                              aria-errormessage="signUpPasswordErrorMessage"
                            />
                            <p
-                              id="passwordErrorMessage"
+                              id="signUpPasswordErrorMessage"
                               class="invalid-feedback"
                               aria-live="off"
                            ></p>
@@ -137,6 +193,14 @@
                   <button class="btn btn-light btn-block cancel-button">
                      Cancel
                   </button>
+                  <small id="signInFormHelp" class="text-muted d-none">
+                     Don't have an account?
+                     <a href="#" id="registerAnchor">Register</a>
+                  </small>
+                  <small id="signUpFormHelp" class="text-muted">
+                     Already have an account?
+                     <a href="#" id="signInAnchor">Sign in</a>
+                  </small>
                </div>
             </div>
          </div>
