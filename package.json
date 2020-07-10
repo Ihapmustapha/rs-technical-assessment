@@ -4,14 +4,16 @@
    "scripts": {
       "commit": "git-cz",
       "lint": "eslint ./ --fix",
-      "format": "prettier --write \"**/*.+(js|md|json)\""
+      "format": "prettier --write \"**/*.+(js|md|json)\"",
+      "start": "serve"
    },
    "devDependencies": {
       "commitizen": "^4.0.5",
       "cz-conventional-changelog": "^3.1.0",
       "eslint": "^7.4.0",
       "husky": "^4.2.5",
-      "prettier": "^2.0.5"
+      "prettier": "^2.0.5",
+      "serve": "^11.3.2"
    },
    "config": {
       "commitizen": {
